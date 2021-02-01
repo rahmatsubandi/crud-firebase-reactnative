@@ -45,3 +45,18 @@ $ npx react-native init nameProject
   ```
   $ npm i firebase
   ```
+
+## To do List CRUD React Native with Firebase
+
+- [x] Install (Day 1)
+- [x] Setting React Navigation (Day 1)
+- [x] Setup Firebase (Day 1)
+- [x] Create Page (Day 1)
+- [ ] Design Page Add
+- [ ] Save Data
+- [ ] Create Home Page
+- [ ] Create Component
+- [ ] Create Detail Page
+- [ ] Delete Data
+- [ ] Update Data
+- [ ] Overcoming Warning Settings Timer
