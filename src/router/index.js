@@ -1,6 +1,6 @@
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
-import {Home, Add} from '../pages';
+import {Home, Add, DetailData} from '../pages';
 
 const Stack = createStackNavigator();
 
@@ -13,6 +13,7 @@ const Router = () => {
         options={{headerShown: false}} // menyembunyikan header
       />
       <Stack.Screen name="Add" component={Add} />
+      <Stack.Screen name="DetailData" component={DetailData} />
     </Stack.Navigator>
   );
 };

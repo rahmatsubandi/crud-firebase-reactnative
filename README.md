@@ -52,11 +52,11 @@ $ npx react-native init nameProject
 - [x] Setting React Navigation (Day 1)
 - [x] Setup Firebase (Day 1)
 - [x] Create Page (Day 1)
-- [ ] Design Page Add
-- [ ] Save Data
-- [ ] Create Home Page
-- [ ] Create Component
-- [ ] Create Detail Page
+- [x] Design Page Add (Day 2)
+- [x] Save Data (Day 2)
+- [x] Create Home Page (Day 2)
+- [x] Create Component Card Data (Day 2)
+- [x] Create Detail Page Data (Day 2)
 - [ ] Delete Data
 - [ ] Update Data
 - [ ] Overcoming Warning Settings Timer
