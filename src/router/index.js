@@ -1,6 +1,6 @@
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
-import {Home, Add, DetailData} from '../pages';
+import {Home, Add, DetailData, EditData} from '../pages';
 
 const Stack = createStackNavigator();
 
@@ -12,8 +12,17 @@ const Router = () => {
         component={Home} // memanggil component Home yang berada di folder pages
         options={{headerShown: false}} // menyembunyikan header
       />
-      <Stack.Screen name="Add" component={Add} />
-      <Stack.Screen name="DetailData" component={DetailData} />
+      <Stack.Screen name="Add" component={Add} options={{title: 'Add Data'}} />
+      <Stack.Screen
+        name="DetailData"
+        component={DetailData}
+        options={{title: 'Detail Data'}}
+      />
+      <Stack.Screen
+        name="EditData"
+        component={EditData}
+        options={{title: 'Edit Data'}}
+      />
     </Stack.Navigator>
   );
 };

@@ -8,7 +8,7 @@ import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import React from 'react';
 import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 
-const CardData = ({id, contactItems, navigation}) => {
+const CardData = ({id, contactItems, navigation, removeData}) => {
   return (
     <TouchableOpacity
       style={styles.container}
@@ -24,8 +24,14 @@ const CardData = ({id, contactItems, navigation}) => {
           color={'#ffa700'}
           size={20}
           style={{paddingRight: 30}}
+          onPress={() => navigation.navigate('EditData', {id: id})}
         />
-        <FontAwesomeIcon icon={faTrashAlt} color={'#d62d20'} size={20} />
+        <FontAwesomeIcon
+          icon={faTrashAlt}
+          color={'#d62d20'}
+          size={20}
+          onPress={() => removeData(id)}
+        />
       </View>
     </TouchableOpacity>
   );

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Text, StyleSheet, View, TouchableOpacity} from 'react-native';
+import {Text, StyleSheet, View, TouchableOpacity, Alert} from 'react-native';
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import {faPlus} from '@fortawesome/free-solid-svg-icons';
 
@@ -19,6 +19,11 @@ export default class Home extends Component {
   }
 
   componentDidMount() {
+    this.getData();
+  }
+
+  // membuat method untuk mengambil data di database
+  getData = () => {
     // Menjalankan Firebase
     Firebase.database()
       .ref('Contact')
@@ -32,7 +37,34 @@ export default class Home extends Component {
           contactKey: Object.keys(contactItems),
         });
       });
-  }
+  };
+
+  // Membuat method baru untuk remove/hapus data dan mengoper parameter id
+  removeData = (id) => {
+    Alert.alert(
+      'Info',
+      'Are you sure you want to delete data? Deleted data cannot be recovered.',
+      [
+        {
+          text: 'Cancel',
+          onPress: () => console.log('Cancel Pressed'),
+          style: 'cancel',
+        },
+        {
+          text: 'OK',
+          onPress: () => {
+            Firebase.database()
+              .ref('Contact/' + id)
+              .remove();
+
+            this.getData();
+            Alert.alert('Delete', 'Data deleted successfully!');
+          },
+        },
+      ],
+      {cancelable: false},
+    );
+  };
 
   render() {
     // console.log('Contact: ', this.state.contacts);
@@ -60,6 +92,7 @@ export default class Home extends Component {
                 contactItems={contacts[key]}
                 id={key}
                 {...this.props} // berfungsi untuk mengoper semua props ke dalam CardData
+                removeData={this.removeData}
               />
             ))
           ) : (

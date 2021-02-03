@@ -57,6 +57,6 @@ $ npx react-native init nameProject
 - [x] Create Home Page (Day 2)
 - [x] Create Component Card Data (Day 2)
 - [x] Create Detail Page Data (Day 2)
-- [ ] Delete Data
-- [ ] Update Data
-- [ ] Overcoming Warning Settings Timer
+- [x] Delete Data (Day 3)
+- [x] Update Data (Day 3)
+- [x] Overcoming Warning Settings Timer (Day 3)
